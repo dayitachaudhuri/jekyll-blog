@@ -1,0 +1,23 @@
+---
+layout: default
+title: "Archive"
+permalink: /archive/
+---
+
+<link href="/css/override.css" rel="stylesheet" type="text/css">
+
+<h1>Archived Posts</h1>
+<p>
+  <a href="{{ '/blog/' | relative_url }}">Go Back to Published Posts</a>
+</p>
+
+<ul class="archive-list">
+  {% for post in site.posts %}
+    {% if post.archive %}
+      <li>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
