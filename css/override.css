@@ -44,10 +44,6 @@ hr {
   opacity: 0.3;
 }
 
-footer {
-  background: #f8f9fa;;
-}
-
 a, a:visited {
   color: #1e90ff; /* DodgerBlue */
 }
@@ -70,10 +66,53 @@ a:hover, a:focus {
   color: #63b3ff !important;   /* Lighter blue hover */
 }
 
-/* Main header (top area of sidebar with site title) */
-header {
-  background-color: #222 !important; /* Same dark grey */
-  color: #eee !important;
+header{
+  display: block;
+  margin-bottom: 0 !important;
+  position: static !important;
+  padding-bottom: 40px !important;
+}
+
+header p {
+  margin: 0px 5% !important;
+}
+
+header h3 {
+  color: white;
+}
+
+#banner {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: -20px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 5% !important;
+  width: 75%;
+  box-sizing: border-box;
+  position: static !important;
+}
+
+#banner .button {
+  margin: 6px 12px!important;
+}
+
+#banner .button-archived {
+  margin: 6px 12px!important;
+  border: 1px solid #2b2b2b;
+  background: transparent !important;
+}
+
+section {
+  margin-top: 5%; 
+  padding: 5% !important;
+}
+
+nav {
+  top: 270px !important;
 }
 
 /* Buttons */
@@ -99,4 +138,42 @@ pre, code {
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 1em;
+}
+
+.searchbar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.searchbar-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.7em 2.5em 0.7em 2.5em;
+  font-size: 1.1em;
+  border: 1px solid #1e90ff;
+  border-radius: 999px;
+  outline: none;
+  background: #f8f9fa url('data:image/svg+xml;utf8,<svg fill="gray" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99c.41.41 1.09.41 1.5 0s.41-1.09 0-1.5l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat 0.8em center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(30,144,255,0.07);
+}
+
+.searchbar-input:focus {
+  border-color: #104e8b;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.15);
+}
+
+/* Responsive header paragraph: visible on all devices */
+@media (max-width: 720px) {
+  header p {
+    display: block !important;
+    padding: 0 !important;
+    font-size: 1em !important;
+  }
+
+  section {
+    margin-top: 40px !important;
+  }
 }

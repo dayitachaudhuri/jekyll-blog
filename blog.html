@@ -1,16 +1,37 @@
 ---
 layout: default
-title: Blog
+title: Let's Talk Tokens
+team: FLAIR, CDS, IISc
 ---
 
 <link href="/css/override.css" rel="stylesheet" type="text/css">
 
-<h1>Blog</h1>
+<h1>Blog Posts</h1>
 
-<ul class="post-list">
+<!-- Search Bar -->
+<div class="searchbar-wrapper">
+  <input type="text" id="search-bar" class="searchbar-input" placeholder="Search by title or description...">
+</div>
+
+<!-- Sorting Controls -->
+<div style="margin-bottom: 1em;">
+  <label for="sort-select">Sort by:</label>
+  <select id="sort-select">
+    <option value="date-desc">Date (Newest First)</option>
+    <option value="date-asc">Date (Oldest First)</option>
+    <option value="title-asc">Title (A-Z)</option>
+    <option value="title-desc">Title (Z-A)</option>
+  </select>
+</div>
+
+<ul class="post-list" id="post-list">
   {% for post in site.posts %}
     {% unless post.archive %}
-      <li>
+      <li 
+        data-title="{{ post.title | escape }}" 
+        data-date="{{ post.date | date: '%Y-%m-%d' }}"
+        data-desc="{{ post.excerpt | strip_html | escape }}"
+      >
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
         <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
@@ -22,3 +43,49 @@ title: Blog
 <p>
   <a href="{{ '/archive/' | relative_url }}">📂 View Archived Posts</a>
 </p>
+
+<script>
+const postList = document.getElementById('post-list');
+const sortSelect = document.getElementById('sort-select');
+const searchBar = document.getElementById('search-bar');
+
+function sortPosts() {
+  const items = Array.from(postList.children);
+  const value = sortSelect.value;
+
+  items.sort((a, b) => {
+    if (value === 'date-desc') {
+      return b.dataset.date.localeCompare(a.dataset.date);
+    } else if (value === 'date-asc') {
+      return a.dataset.date.localeCompare(b.dataset.date);
+    } else if (value === 'title-asc') {
+      return a.dataset.title.localeCompare(b.dataset.title);
+    } else if (value === 'title-desc') {
+      return b.dataset.title.localeCompare(a.dataset.title);
+    }
+    return 0;
+  });
+
+  items.forEach(item => postList.appendChild(item));
+}
+
+function filterPosts() {
+  const query = searchBar.value.trim().toLowerCase();
+  Array.from(postList.children).forEach(item => {
+    const title = item.dataset.title.toLowerCase();
+    const desc = item.dataset.desc.toLowerCase();
+    if (title.includes(query) || desc.includes(query)) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+sortSelect.addEventListener('change', sortPosts);
+searchBar.addEventListener('input', filterPosts);
+
+// Initial sort and filter
+sortPosts();
+filterPosts();
+</script>

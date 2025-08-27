@@ -1,11 +1,23 @@
-title: "FLAIR IISC"
+title: "Let's Talk Tokens"
 author: "Danish Pruthi"
-description: "Our group broadly works in the areas of Natural Language Processing (NLP). Our research focuses on developing robust, fair, and interpretable AI systems."
+description: "We are FLAIR Lab, part of the Department of Computational and Data Sciences at the Indian Institute of Science. Our research lies at the intersection of Natural Language Processing (NLP) and responsible AI, with a focus on building systems that are robust, fair, and interpretable. Through this blog, we share our perspectives on recent advances in NLP, highlight our own research, and reflect on broader questions and curiosities in the field."
 email: "danish@iisc.ac.in"
 twitter_username: "danish037"
 github_username: "flair-iisc"
 
-theme: "jekyll-theme-dinky"
+# theme: "jekyll-theme-dinky"
+
+# theme: "jekyll-theme-dinky"
+# theme: "jekyll-theme-slate"
+# theme: "jekyll-theme-cayman"
+# theme: "jekyll-theme-hacker" #DARK
+theme: "jekyll-theme-leap-day" # Preferred
+# theme: "jekyll-theme-merlot" # Shiny
+# theme: "jekyll-theme-midnight" # DARK
+# theme: "jekyll-theme-minimal"
+# theme: "jekyll-theme-modernist" # Good
+# theme: "jekyll-theme-tactile" # decent
+# theme: "jekyll-theme-time-machine" # too shiny
 
 kramdown:
   syntax_highlighter_opts:
