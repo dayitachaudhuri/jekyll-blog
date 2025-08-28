@@ -39,26 +39,11 @@
   opacity: 0.3 !important;
 }
 
-a, a:visited {
-  color: #1e90ff !important; /* DodgerBlue */
-}
-a:hover, a:focus {
-  color: #104e8b !important; /* Darker blue on hover */
-}
-
 /* Sidebar (site panel) */
 .sidebar {
   background-color: #222 !important;  /* Dark grey */
   color: #eee !important;             /* Light text */
   padding: 1em !important;
-}
-
-/* Sidebar links */
-.sidebar a {
-  color: #1e90ff !important;   /* Blue links */
-}
-.sidebar a:hover {
-  color: #63b3ff !important;   /* Lighter blue hover */
 }
 
 header{
@@ -89,6 +74,7 @@ header h3 {
   width: 75% !important;
   box-sizing: border-box !important;
   position: static !important;
+  min-height: fit-content !important;
 }
 
 #banner .button {

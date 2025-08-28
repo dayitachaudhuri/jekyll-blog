@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {% seo %}
+    <link rel="stylesheet" href="{{ '/css/override.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
@@ -25,8 +26,9 @@
 
       <div id="banner">
         <a href="https://dayitachaudhuri.github.io/FLAIR/" class="button"><strong>More About FLAIR</strong></a>
-        <a href="https://dayitachaudhuri.github.io/FLAIR/#contact" class="button"><strong>Contact Us</strong></a>
-        <a href="https://dayitachaudhuri.github.io/FLAIR/" class="button button-archived"><strong>View Archived Posts</strong></a>
+        <a href="/blog" class="button button-archived"><strong>View All Posts</strong></a>
+        <a href="/archive" class="button button-archived"><strong>View Archived Posts</strong></a>
+        <a href="https://dayitachaudhuri.github.io/FLAIR/#contact" class="button button-archived"><strong>Contact Us</strong></a>
       </div>
 
     <div class="wrapper">
