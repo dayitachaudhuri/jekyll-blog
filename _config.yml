@@ -42,6 +42,6 @@ defaults:
 
 nav:
   - name: "Blog"
-    link: /blog/
+    link: /
   - name: "Archive"
     link: /archive/
